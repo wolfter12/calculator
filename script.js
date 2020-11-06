@@ -16,7 +16,7 @@ class Calculator {
   }
 
   appendNumber(number) {
-    console.log(this.currentOperand);
+    if (number === '.' && this.currentOperand.includes('.')) return;
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
@@ -62,3 +62,8 @@ operationButtons.forEach(button => {
     calculator.updateOutput();
   });
 });
+
+decimalButton.addEventListener('click', (event) => {
+  calculator.appendNumber(event.target.innerText);
+  calculator.updateOutput();
+})
