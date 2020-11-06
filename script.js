@@ -62,6 +62,8 @@ class Calculator {
     // console.log(`this.currentOperand = ${this.currentOperand}`);
     if (this.operation !== null && this.operation !== undefined) {
       this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`;
+    } else {
+      this.previousOperandTextElement.innerText = '';
     }
   }
 
