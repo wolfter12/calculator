@@ -30,3 +30,14 @@ body {
 .span-two {
   grid-column: span 2;
 }
+
+.output {
+  grid-column: 1 / -1;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+}
