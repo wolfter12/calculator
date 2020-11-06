@@ -38,3 +38,5 @@ const decimalButton = document.querySelector('[data-decimal]');
 const equalsButton = document.querySelector('[data-equals');
 const deleteButton = document.querySelector('[data-delete');
 const allClearButton = document.querySelector('[data-all-clear');
+
+const calculator = new Calculator(previousOperand, currentOperand);
