@@ -66,9 +66,26 @@ class Calculator {
   }
 
   getDisplayNumber(number) {
-    const floatNumber = parseFloat(number);
-    if (isNaN(floatNumber)) return '';
-    return floatNumber.toLocaleString('en');
+    const stringNumber = number.toString();
+    const integerPart = parseFloat(stringNumber.split('.')[0]);
+    const decimalPart = stringNumber.split('.')[1];
+
+    let integerDisplay;
+    if (isNaN(integerPart)) {
+      integerDisplay = '';
+    } else {
+      integerDisplay = integerPart.toLocaleString('en', { maximumFractionDigits: 0 });
+    }
+
+    if (decimalPart !== null && decimalPart !== undefined) {
+      return `${integerDisplay}.${decimalPart}`;
+    } else {
+      return integerDisplay;
+    }
+
+    // const floatNumber = parseFloat(number);
+    // if (isNaN(floatNumber)) return '';
+    // return floatNumber.toLocaleString('en');
   }
 }
 
