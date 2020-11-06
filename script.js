@@ -1,3 +1,34 @@
+class Calculator {
+  constructor(previousOperand, currentOperand) {
+    this.previousOperand = previousOperand;
+    this.currentOperand = currentOperand;
+  }
+
+  clear() {
+
+  }
+
+  delete() {
+
+  }
+
+  appendNumber(number) {
+
+  }
+
+  chooseOperation(operation) {
+
+  }
+
+  compute() {
+
+  }
+
+  updateOutput() {
+
+  }
+}
+
 const previousOperand = document.querySelector('[data-previous-operand');
 const currentOperand = document.querySelector('[data-current-operand');
 const numberButtons = document.querySelectorAll('[data-number');
