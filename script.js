@@ -5,7 +5,8 @@ class Calculator {
   }
 
   clear() {
-
+    this.currentOperand = '';
+    this.previousOperand = '';
   }
 
   delete() {
