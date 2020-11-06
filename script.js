@@ -1,12 +1,14 @@
 class Calculator {
-  constructor(previousOperand, currentOperand) {
+  constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement;
     this.currentOperandTextElement = currentOperandTextElement;
+    this.clear();
   }
 
   clear() {
-    this.currentOperandTextElement = '';
-    this.previousOperandTextElement = '';
+    this.currentOperand = '';
+    this.previousOperand = '';
+    this.operation = undefined;
   }
 
   delete() {
@@ -14,7 +16,8 @@ class Calculator {
   }
 
   appendNumber(number) {
-    this.currentOperand = number;
+    console.log(this.currentOperand);
+    this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
   chooseOperation(operation) {
@@ -45,5 +48,5 @@ numberButtons.forEach(button => {
   button.addEventListener('click', () => {
     calculator.appendNumber(button.innerText);
     calculator.updateOutput();
-  })
-})
+  });
+});
