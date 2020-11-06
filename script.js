@@ -60,7 +60,9 @@ class Calculator {
     this.currentOperandTextElement.innerText = this.currentOperand;
     // console.log(`this.previousOperand = ${this.previousOperand}`);
     // console.log(`this.currentOperand = ${this.currentOperand}`);
-    this.previousOperandTextElement.innerText = this.previousOperand;
+    if (this.operation !== null && this.operation !== undefined) {
+      this.previousOperandTextElement.innerText = `${this.previousOperand} ${this.operation}`;
+    }
   }
 }
 
