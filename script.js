@@ -22,13 +22,38 @@ class Calculator {
 
   chooseOperation(operation) {
     if (this.currentOperand === '') return;
+    if (this.currentOperand !== '') {
+      this.compute();
+    }
     this.operation = operation;
     this.previousOperand = this.currentOperand;
     this.currentOperand = '';
   }
 
   compute() {
-
+    let computation;
+    const previousValue = parseFloat(this.previousOperand);
+    const currentValue = parseFloat(this.currentOperand);
+    if (isNaN(previousValue) || isNaN(currentValue)) return;
+    switch (this.operation) {
+      case '+':
+        computation = previousValue + currentValue;
+        break;
+      case '-':
+        computation = previousValue - currentValue;
+        break;
+      case '*':
+        computation = previousValue * currentValue;
+        break;
+      case '÷':
+        computation = previousValue / currentValue;
+        break;
+      default:
+        return;
+    }
+    this.currentOperand = computation;
+    this.operation = undefined;
+    this.previousOperand = '';
   }
 
   updateOutput() {
@@ -68,3 +93,13 @@ decimalButton.addEventListener('click', (event) => {
   calculator.appendNumber(event.target.innerText);
   calculator.updateOutput();
 })
+
+equalsButton.addEventListener('click', button => {
+  calculator.compute();
+  calculator.updateOutput();
+});
+
+allClearButton.addEventListener('click', button => {
+  calculator.clear();
+  calculator.updateOutput();
+});
