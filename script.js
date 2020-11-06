@@ -103,3 +103,8 @@ allClearButton.addEventListener('click', button => {
   calculator.clear();
   calculator.updateOutput();
 });
+
+deleteButton.addEventListener('click', button => {
+  calculator.delete();
+  calculator.updateOutput();
+});
