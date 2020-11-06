@@ -1,3 +1,3 @@
 # Calculator
 
-![calculator screenshot](calculator\calculator.jpg)  
+![calculator screenshot](calculator.jpg)  
